@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.flickrbrowserapp.temp.Photo
+import com.example.flickrbrowserapp.model.Photo
 import kotlinx.android.synthetic.main.item_row.view.*
 
 class RecyclerViewAdapter(var photo: List<Photo>): RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder>() {
@@ -32,8 +32,8 @@ class RecyclerViewAdapter(var photo: List<Photo>): RecyclerView.Adapter<Recycler
                     .into(imageView)
 
             } else {
-                //set no image
-                //imageView.setImageResource(0)
+                //set no image found
+                imageView.setBackgroundResource(R.drawable.noimage)
 
             }
         }
@@ -42,7 +42,6 @@ class RecyclerViewAdapter(var photo: List<Photo>): RecyclerView.Adapter<Recycler
     override fun getItemCount(): Int {
         return photo.size
     }
-
     fun update(data: List<Photo>) {
         this.photo = data
         notifyDataSetChanged()

@@ -1,6 +1,4 @@
-package com.example.flickrbrowserapp.temp
-
-import com.example.flickrbrowserapp.temp.Photo
+package com.example.flickrbrowserapp.model
 
 data class PhotosX(
     val page: Int,
